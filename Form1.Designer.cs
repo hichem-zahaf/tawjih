@@ -63,7 +63,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.closeApp = new System.Windows.Forms.Button();
+            this.minApp = new System.Windows.Forms.Button();
+            this.dockApp = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,11 +103,10 @@
             this.panel1.Controls.Add(this.txtWindowXPath);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 102);
+            this.panel1.Location = new System.Drawing.Point(12, 86);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(612, 451);
-            this.panel1.TabIndex = 1;
-            this.panel1.Visible = false;
+            this.panel1.Size = new System.Drawing.Size(762, 451);
+            this.panel1.TabIndex = 9;
             // 
             // checkBoxDebug
             // 
@@ -418,6 +422,56 @@
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
+            // closeApp
+            // 
+            this.closeApp.BackColor = System.Drawing.Color.Transparent;
+            this.closeApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeApp.BackgroundImage")));
+            this.closeApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.closeApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.closeApp.Location = new System.Drawing.Point(394, 5);
+            this.closeApp.Name = "closeApp";
+            this.closeApp.Size = new System.Drawing.Size(25, 25);
+            this.closeApp.TabIndex = 4;
+            this.closeApp.UseVisualStyleBackColor = false;
+            this.closeApp.Click += new System.EventHandler(this.closeApp_Click);
+            // 
+            // minApp
+            // 
+            this.minApp.BackColor = System.Drawing.Color.Transparent;
+            this.minApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minApp.BackgroundImage")));
+            this.minApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.minApp.ForeColor = System.Drawing.Color.Transparent;
+            this.minApp.Location = new System.Drawing.Point(363, 6);
+            this.minApp.Name = "minApp";
+            this.minApp.Size = new System.Drawing.Size(25, 25);
+            this.minApp.TabIndex = 5;
+            this.minApp.UseVisualStyleBackColor = false;
+            this.minApp.Click += new System.EventHandler(this.minApp_Click);
+            // 
+            // dockApp
+            // 
+            this.dockApp.BackColor = System.Drawing.Color.Transparent;
+            this.dockApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dockApp.BackgroundImage")));
+            this.dockApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.dockApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.dockApp.Location = new System.Drawing.Point(332, 6);
+            this.dockApp.Name = "dockApp";
+            this.dockApp.Size = new System.Drawing.Size(25, 25);
+            this.dockApp.TabIndex = 6;
+            this.dockApp.UseVisualStyleBackColor = false;
+            this.dockApp.Click += new System.EventHandler(this.dockApp_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.minApp);
+            this.panel2.Controls.Add(this.closeApp);
+            this.panel2.Controls.Add(this.dockApp);
+            this.panel2.Location = new System.Drawing.Point(357, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(429, 35);
+            this.panel2.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,6 +479,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(786, 565);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -434,6 +489,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,6 +529,10 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.Button closeApp;
+        private System.Windows.Forms.Button minApp;
+        private System.Windows.Forms.Button dockApp;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

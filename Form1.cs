@@ -523,12 +523,12 @@ namespace UIAutomation
                 }
                 // Value pattern is not supported
                 Console.WriteLine("Element does not support ValuePattern");
-                return ;
+                return;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred: " + ex.Message);
-                return ;
+                return;
             }
         }
         // Set Text Button
@@ -568,7 +568,7 @@ namespace UIAutomation
 
             try
             {
-                
+
                 // try TextPattern
                 object textPatternObj;
                 if (targetElement.TryGetCurrentPattern(TextPattern.Pattern, out textPatternObj))
@@ -667,58 +667,58 @@ namespace UIAutomation
         // Set value function
         private bool setvaluefunction(string windowXPath, string elementXPath, string value)
         {
-                
-                AutomationElement rootElement = AutomationElement.RootElement;
-                AutomationElement targetElement = null;
 
-                    if (string.IsNullOrEmpty(windowXPath))
-                    {
-                        // Search the elementXPath directly within the root element
-                        targetElement = FindElementByXPath(rootElement, elementXPath);
-                    }
-                    else
-                    {
-                
-                        AutomationElement windowElement = FindElementByXPath(rootElement, windowXPath);
+            AutomationElement rootElement = AutomationElement.RootElement;
+            AutomationElement targetElement = null;
 
-                        if (windowElement == null)
-                        {
-                            HandleException("Window not found");
-                            //MessageBox.Show("Window not found");
-                            return false;
-                        }
+            if (string.IsNullOrEmpty(windowXPath))
+            {
+                // Search the elementXPath directly within the root element
+                targetElement = FindElementByXPath(rootElement, elementXPath);
+            }
+            else
+            {
 
-                        targetElement = FindElementByXPath(windowElement, elementXPath);
-                        if (targetElement == null)
-                        {
-                            HandleException("Element not found");
-                            //MessageBox.Show("Element not found");
-                            return false;
-                        } 
+                AutomationElement windowElement = FindElementByXPath(rootElement, windowXPath);
 
-                    }
-                    try
-                    {
-                        // Try ValuePattern first
-                        object valuePatternObj;
-                        if (targetElement.TryGetCurrentPattern(ValuePattern.Pattern, out valuePatternObj))
-                        {
-                            ValuePattern valuePattern = (ValuePattern)valuePatternObj;
-                            valuePattern.SetValue(value);
-                            return true;
-                        }
+                if (windowElement == null)
+                {
+                    HandleException("Window not found");
+                    //MessageBox.Show("Window not found");
+                    return false;
+                }
 
-                        // Value pattern is not supported
-                        HandleException("Element does not support ValuePattern");
-                        //Console.WriteLine("Element does not support ValuePattern");
-                        return false;
-                    }
-                    catch (Exception ex)
-                    {
-                        HandleException(ex.Message);
-                        //Console.WriteLine("An error occurred: " + ex.Message);
-                        return false;
-                    }
+                targetElement = FindElementByXPath(windowElement, elementXPath);
+                if (targetElement == null)
+                {
+                    HandleException("Element not found");
+                    //MessageBox.Show("Element not found");
+                    return false;
+                }
+
+            }
+            try
+            {
+                // Try ValuePattern first
+                object valuePatternObj;
+                if (targetElement.TryGetCurrentPattern(ValuePattern.Pattern, out valuePatternObj))
+                {
+                    ValuePattern valuePattern = (ValuePattern)valuePatternObj;
+                    valuePattern.SetValue(value);
+                    return true;
+                }
+
+                // Value pattern is not supported
+                HandleException("Element does not support ValuePattern");
+                //Console.WriteLine("Element does not support ValuePattern");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex.Message);
+                //Console.WriteLine("An error occurred: " + ex.Message);
+                return false;
+            }
         }
         // Set text function
         private bool settextfunction(string windowXPath, string elementXPath, string value)
@@ -798,7 +798,7 @@ namespace UIAutomation
         private bool sendenterfunction()
         {
             try
-            {  
+            {
                 SendKeys.SendWait("{ENTER}");
 
                 return true;
@@ -829,7 +829,7 @@ namespace UIAutomation
         // Move mouse function
         private bool movemousefunction(string windowXPath, string elementXPath)
         {
-            
+
             AutomationElement rootElement = AutomationElement.RootElement;
             AutomationElement targetElement = null;
 
@@ -1011,7 +1011,7 @@ namespace UIAutomation
                 {
                     { "Flow", flow },
                     { "Data", jsonData }
-                };    
+                };
             if (!string.IsNullOrEmpty(target) && Uri.IsWellFormedUriString(target, UriKind.Absolute))
             {
                 payload.Add("Target", target);
@@ -1173,7 +1173,7 @@ namespace UIAutomation
         {
             string windowXPath = txtWindowXPath.Text;
             string elementXPath = txtElementXPath.Text;
-            getvaluefunction(windowXPath,elementXPath);
+            getvaluefunction(windowXPath, elementXPath);
 
         }
         // Send File via http
@@ -1445,192 +1445,192 @@ namespace UIAutomation
                 _listener.Stop();
                 _listener = null;
                 _isListenerRunning = false;
-                
+
             }
         }
         private async Task ListenForRequests()
         {
-            
-                while (_isListenerRunning)
+
+            while (_isListenerRunning)
+            {
+                try
                 {
+                    HttpListenerContext context = await _listener.GetContextAsync();
+                    HttpListenerRequest request = context.Request;
+                    if (request.RawUrl.Contains("/ping") || request.QueryString["ping"] == "1")
+                    {
+                        var heartbeatResponse = new
+                        {
+                            code = 200,
+                            Status = "Heartbeast received: RDP SSH Connection is alive",
+                            timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
+                        };
+                        string heartbeatResponseString = JsonConvert.SerializeObject(heartbeatResponse);
+                        byte[] buffer = System.Text.Encoding.UTF8.GetBytes(heartbeatResponseString);
+
+                        HttpListenerResponse response = context.Response;
+                        response.ContentType = "application/json";
+                        response.StatusCode = (int)HttpStatusCode.OK;
+                        response.ContentLength64 = buffer.Length;
+                        using (System.IO.Stream output = response.OutputStream)
+                        {
+                            await output.WriteAsync(buffer, 0, buffer.Length);
+                        }
+                        continue;
+                    }
+                    string rpaParam = request.QueryString["rpa"];
+                    if (string.IsNullOrEmpty(rpaParam) || rpaParam != "1")
+                    {
+                        var errorResponse = new
+                        {
+                            error = new
+                            {
+                                code = 400,
+                                message = "Invalid or missing 'rpa' query parameter",
+                                details = "Ensure that the 'rpa' query parameter is included in the request and its value is set to '1'."
+                            },
+                            timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
+                        };
+                        string errorResponseString = JsonConvert.SerializeObject(errorResponse);
+                        byte[] buffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
+
+                        HttpListenerResponse response = context.Response;
+                        response.ContentType = "application/json";
+                        response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        response.ContentLength64 = buffer.Length;
+                        using (System.IO.Stream output = response.OutputStream)
+                        {
+                            await output.WriteAsync(buffer, 0, buffer.Length);
+                        }
+                        continue;
+                    }
+
+                    string requestBody;
+                    using (StreamReader reader = new StreamReader(request.InputStream, request.ContentEncoding))
+                    {
+                        requestBody = await reader.ReadToEndAsync();
+                    }
+                    LogRequestToFile(requestBody);
+                    JArray jsonArray = null;
                     try
                     {
-                        HttpListenerContext context = await _listener.GetContextAsync();
-                        HttpListenerRequest request = context.Request;
-                        if (request.RawUrl.Contains("/ping") || request.QueryString["ping"] == "1")
+                        jsonArray = JArray.Parse(requestBody);
+                    }
+                    catch (JsonReaderException jex)
+                    {
+                        var errorResponse = new
                         {
-                            var heartbeatResponse = new
+                            error = new
                             {
-                                code = 200,
-                                Status = "Heartbeast received: RDP SSH Connection is alive",
-                                timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
-                            };
-                            string heartbeatResponseString = JsonConvert.SerializeObject(heartbeatResponse);
-                            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(heartbeatResponseString);
+                                code = 400,
+                                message = "JSON parsing error",
+                                details = jex.Message
+                            },
+                            timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
+                        };
 
-                            HttpListenerResponse response = context.Response;
-                            response.ContentType = "application/json";
-                            response.StatusCode = (int)HttpStatusCode.OK;
-                            response.ContentLength64 = buffer.Length;
-                            using (System.IO.Stream output = response.OutputStream)
-                            {
-                                await output.WriteAsync(buffer, 0, buffer.Length);
-                            }
-                            continue;
+                        string errorResponseString = JsonConvert.SerializeObject(errorResponse);
+                        byte[] buffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
+
+                        HttpListenerResponse response = context.Response;
+                        response.ContentType = "application/json";
+                        response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        response.ContentLength64 = buffer.Length;
+                        using (System.IO.Stream output = response.OutputStream)
+                        {
+                            await output.WriteAsync(buffer, 0, buffer.Length);
                         }
-                    string rpaParam = request.QueryString["rpa"];
-                        if (string.IsNullOrEmpty(rpaParam) || rpaParam != "1")
-                        {
-                            var errorResponse = new
-                            {
-                                error = new
-                                {
-                                    code = 400,
-                                    message = "Invalid or missing 'rpa' query parameter",
-                                    details = "Ensure that the 'rpa' query parameter is included in the request and its value is set to '1'."
-                                },
-                                timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
-                            };
-                            string errorResponseString = JsonConvert.SerializeObject(errorResponse);
-                            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
+                        continue;
+                    }
 
-                            HttpListenerResponse response = context.Response;
-                            response.ContentType = "application/json";
-                            response.StatusCode = (int)HttpStatusCode.BadRequest;
-                            response.ContentLength64 = buffer.Length;
-                            using (System.IO.Stream output = response.OutputStream)
+                    if (jsonArray == null)
+                    {
+                        var errorResponse = new
+                        {
+                            error = new
                             {
-                                await output.WriteAsync(buffer, 0, buffer.Length);
-                            }
-                            continue;
+                                code = 400,
+                                message = "No valid JSON found in the request.",
+                                details = "The JSON body could not be parsed."
+                            },
+                            timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
+                        };
+
+                        string errorResponseString = JsonConvert.SerializeObject(errorResponse);
+                        byte[] buffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
+
+                        HttpListenerResponse response = context.Response;
+                        response.ContentType = "application/json";
+                        response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        response.ContentLength64 = buffer.Length;
+                        using (System.IO.Stream output = response.OutputStream)
+                        {
+                            await output.WriteAsync(buffer, 0, buffer.Length);
                         }
+                        continue;
+                    }
 
-                        string requestBody;
-                        using (StreamReader reader = new StreamReader(request.InputStream, request.ContentEncoding))
+                    List<Dictionary<string, string>> actions = jsonArray
+                        .Select(action => action.ToObject<Dictionary<string, string>>())
+                        .ToList();
+
+                    if (actions != null && actions.Count > 0)
+                    {
+
+                        bool actionsSuccessful = await StartActions(actions);
+                        if (actionsSuccessful)
                         {
-                            requestBody = await reader.ReadToEndAsync();
-                        }
-                        LogRequestToFile(requestBody);
-                        JArray jsonArray = null;
-                        try
-                        {
-                            jsonArray = JArray.Parse(requestBody);
-                        }
-                        catch (JsonReaderException jex)
-                        {
-                            var errorResponse = new
-                            {
-                                error = new
-                                {
-                                    code = 400,
-                                    message = "JSON parsing error",
-                                    details = jex.Message
-                                },
-                                timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
-                            };
-
-                            string errorResponseString = JsonConvert.SerializeObject(errorResponse);
-                            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
-
-                            HttpListenerResponse response = context.Response;
-                            response.ContentType = "application/json";
-                            response.StatusCode = (int)HttpStatusCode.BadRequest;
-                            response.ContentLength64 = buffer.Length;
-                            using (System.IO.Stream output = response.OutputStream)
-                            {
-                                await output.WriteAsync(buffer, 0, buffer.Length);
-                            }
-                            continue;
-                        }
-
-                        if (jsonArray == null)
-                        {
-                            var errorResponse = new
-                            {
-                                error = new
-                                {
-                                    code = 400,
-                                    message = "No valid JSON found in the request.",
-                                    details = "The JSON body could not be parsed."
-                                },
-                                timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd")
-                            };
-
-                            string errorResponseString = JsonConvert.SerializeObject(errorResponse);
-                            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
-
-                            HttpListenerResponse response = context.Response;
-                            response.ContentType = "application/json";
-                            response.StatusCode = (int)HttpStatusCode.BadRequest;
-                            response.ContentLength64 = buffer.Length;
-                            using (System.IO.Stream output = response.OutputStream)
-                            {
-                                await output.WriteAsync(buffer, 0, buffer.Length);
-                            }
-                            continue;
-                        }
-
-                        List<Dictionary<string, string>> actions = jsonArray
-                            .Select(action => action.ToObject<Dictionary<string, string>>())
-                            .ToList();
-
-                        if (actions != null && actions.Count > 0)
-                        {
-
-                            bool actionsSuccessful = await StartActions(actions);
-                            if (actionsSuccessful)
-                            {
                             var successResponse = new
                             {
                                 message = "Request processed successfully",
                                 actionCount = actions.Count,
                                 timestamp = DateTime.UtcNow.ToString("HH:mm:ss yyyy-MM-dd"),
                                 getData = data
-                                };
-                                string successResponseString = JsonConvert.SerializeObject(successResponse);
-                                byte[] buffer = System.Text.Encoding.UTF8.GetBytes(successResponseString);
+                            };
+                            string successResponseString = JsonConvert.SerializeObject(successResponse);
+                            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(successResponseString);
 
-                                HttpListenerResponse response = context.Response;
-                                response.ContentType = "application/json";
-                                response.StatusCode = (int)HttpStatusCode.OK;
-                                response.ContentLength64 = buffer.Length;
+                            HttpListenerResponse response = context.Response;
+                            response.ContentType = "application/json";
+                            response.StatusCode = (int)HttpStatusCode.OK;
+                            response.ContentLength64 = buffer.Length;
 
-                                using (System.IO.Stream output = response.OutputStream)
-                                {
-                                    await output.WriteAsync(buffer, 0, buffer.Length);
-                                }
-                            }
-                            else
+                            using (System.IO.Stream output = response.OutputStream)
                             {
-                                var errorResponse = new
-                                {
-                                    message = "The UIA automation was executed but did not finish properly, please check your instructions and reset your environment."
-                                };
-                                string errorResponseString = JsonConvert.SerializeObject(errorResponse);
-                                byte[] errorBuffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
-                                HttpListenerResponse response = context.Response;
-                                response.ContentType = "application/json";
-                                response.StatusCode = (int)HttpStatusCode.BadRequest;
-                                response.ContentLength64 = errorBuffer.Length;
-                                using (System.IO.Stream output = response.OutputStream)
-                                {
-                                    await output.WriteAsync(errorBuffer, 0, errorBuffer.Length);
-                                }
+                                await output.WriteAsync(buffer, 0, buffer.Length);
+                            }
+                        }
+                        else
+                        {
+                            var errorResponse = new
+                            {
+                                message = "The UIA automation was executed but did not finish properly, please check your instructions and reset your environment."
+                            };
+                            string errorResponseString = JsonConvert.SerializeObject(errorResponse);
+                            byte[] errorBuffer = System.Text.Encoding.UTF8.GetBytes(errorResponseString);
+                            HttpListenerResponse response = context.Response;
+                            response.ContentType = "application/json";
+                            response.StatusCode = (int)HttpStatusCode.BadRequest;
+                            response.ContentLength64 = errorBuffer.Length;
+                            using (System.IO.Stream output = response.OutputStream)
+                            {
+                                await output.WriteAsync(errorBuffer, 0, errorBuffer.Length);
+                            }
                         }
 
                     }
 
-                    }
-                    catch (HttpListenerException ex)
-                    {
-                        MessageBox.Show($"HttpListenerException: {ex.Message}");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Exception: {ex.Message}");
-                    }
                 }
-            
+                catch (HttpListenerException ex)
+                {
+                    MessageBox.Show($"HttpListenerException: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Exception: {ex.Message}");
+                }
+            }
+
         }
         private void StartListener(string prefix)
         {
@@ -1819,8 +1819,8 @@ namespace UIAutomation
                 bool breakFlag = action.ContainsKey("break") && bool.TryParse(action["break"], out breakValue) ? breakValue : true;
                 int timeout;
                 int timer;
-                int x=0;
-                int y=0;
+                int x = 0;
+                int y = 0;
                 string path1 = action.ContainsKey("path1") ? action["path1"] : null;
                 string path2 = action.ContainsKey("path2") ? action["path2"] : null;
                 string FileName = action.ContainsKey("filename") ? action["filename"] : null;
@@ -1832,7 +1832,7 @@ namespace UIAutomation
                     bool isValidTimeout = int.TryParse(action["timeout"], out timeout);
                     if (!isValidTimeout)
                     {
-                        timeout = 4; 
+                        timeout = 4;
                     }
                 }
                 else
@@ -2018,8 +2018,8 @@ namespace UIAutomation
                 string file = action.ContainsKey("file") ? action["file"] : null;
                 int timeout;
                 int timer;
-                int x=0;
-                int y=0;
+                int x = 0;
+                int y = 0;
                 string path1 = action.ContainsKey("path1") ? action["path1"] : null;
                 string path2 = action.ContainsKey("path2") ? action["path2"] : null;
                 string FileName = action.ContainsKey("filename") ? action["filename"] : null;
@@ -2199,7 +2199,7 @@ namespace UIAutomation
                 int actionCount = actions.Count;
             }
             return true;
-            }
+        }
         // Send Keys
         private void button5_Click(object sender, EventArgs e)
         {
@@ -2330,7 +2330,8 @@ namespace UIAutomation
                 }
 
             }
-            try {
+            try
+            {
 
                 InteractWithElement(targetElement);
             }
@@ -2381,9 +2382,9 @@ namespace UIAutomation
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred: " + ex.Message);
-                return ;
+                return;
             }
-            
+
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -2503,7 +2504,7 @@ namespace UIAutomation
         // Close Window 
         private void button13_Click(object sender, EventArgs e)
         {
-            
+
             string elementXPath = txtElementXPath.Text;
 
             CloseWindowByXPath(elementXPath);
@@ -2661,6 +2662,31 @@ namespace UIAutomation
         {
 
         }
+
+        private void closeApp_Click(object sender, EventArgs e)
+        {
+            // Close the application window
+            this.Close();
+        }
+
+        private void minApp_Click(object sender, EventArgs e)
+        {
+            // Minimize the application window
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dockApp_Click(object sender, EventArgs e)
+        {
+            // Toggle between maximized and normal window state
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
     }
-    
+
 }
