@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UIAutomation.Properties {
+namespace Tawjih.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

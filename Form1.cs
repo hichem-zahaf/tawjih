@@ -59,7 +59,6 @@ namespace UIAutomation
         private NotifyIcon notifyIcon1;
         private ContextMenuStrip contextMenu;
         // Class level vars
-        private static about aboutFormInstance;
         // End Variables
         public Form1()
         {
@@ -70,12 +69,9 @@ namespace UIAutomation
             LoadActionsFromFile();
             // Get debug value
             checkBoxDebug.Checked = UIA_debug;
-            // Bypass SSL Cert Authetication
-            HttpClientHandler handler = new HttpClientHandler
-            {
-                ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-            };
-            httpClient = new HttpClient(handler);
+            // Bypass SSL Certificate Authentication for .NET Framework 4.5.2
+            ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+            httpClient = new HttpClient();
         }
         private void HandleException(string message)
         {
@@ -120,17 +116,12 @@ namespace UIAutomation
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.TextBox1Value = txtWindowXPath.Text;
-            Properties.Settings.Default.TextBox2Value = txtElementXPath.Text;
-            Properties.Settings.Default.Save(); // Save the settings
             notifyIcon1.Visible = false;
             notifyIcon1.Dispose();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Load predefined values
-            txtWindowXPath.Text = Properties.Settings.Default.TextBox1Value;
-            txtElementXPath.Text = Properties.Settings.Default.TextBox2Value;
             SetupNotificationIcon();
             // Create Main Menu Items
             ToolStripMenuItem fileMenu = new ToolStripMenuItem("File");
@@ -154,9 +145,6 @@ namespace UIAutomation
             editMenu.DropDownItems.Add(startTcpItem);
             startTcpItem.Enabled = false;
             //
-            // Add Sub Menu Items for "View"
-            ToolStripMenuItem devModeItem = new ToolStripMenuItem("Developer Mode", null, pictureBox2_Click);
-            viewMenu.DropDownItems.Add(devModeItem);
             //
             // Add Sub Menu Items for "Help"
             ToolStripMenuItem termsItem = new ToolStripMenuItem("Terms and conditions", null, terns_Click);
@@ -174,36 +162,7 @@ namespace UIAutomation
             this.Controls.Add(menuStrip2);
             //
             this.KeyPreview = true;
-            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
-        }
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.F2)
-            {
-                if (panel1.Visible)
-                {
-                    panel1.Visible = false;
-                    panel2.Visible = true;
-                }
-                else
-                {
-                    panel1.Visible = true;
-                    panel2.Visible = false;
-                }
-            }
-            if (e.KeyCode == Keys.F1)
-            {
-                if (aboutFormInstance == null || aboutFormInstance.IsDisposed)
-                {
-                    
-                    aboutFormInstance = new about();
-                    aboutFormInstance.ShowDialog();
-                }
-                else
-                {
-                    aboutFormInstance.BringToFront();
-                }
-            }
+
         }
         // Find element using XPath
         private AutomationElement FindElementByXPath(AutomationElement rootElement, string xPath)
@@ -499,6 +458,7 @@ namespace UIAutomation
                     }
                     catch (Exception ex)
                     {
+                        HandleException($"Error during element search: {ex.Message}");
                     }
                     System.Threading.Thread.Sleep(checkIntervalMilliseconds);
                 }
@@ -1189,7 +1149,7 @@ namespace UIAutomation
             }
             catch (Exception ex)
             {
-                HandleException("An error occurred while trying to close the window");
+                HandleException("An error occurred while trying to close the window " + ex);
                 return false;
             }
         }
@@ -2633,20 +2593,6 @@ namespace UIAutomation
 
         }
         // Picture debug toggler
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (panel1.Visible)
-            {
-                panel1.Visible = false;
-                panel2.Visible = true;
-            }
-            else
-            {
-                panel1.Visible = true;
-                panel2.Visible = false;
-            }   
-        }
-        //
         private void LoadFile_Click(object sender, EventArgs e)
         {
             // Code for "Load" functionality
