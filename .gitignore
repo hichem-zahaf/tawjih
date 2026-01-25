@@ -87,10 +87,6 @@ ipch/
 # Core files
 core
 
-# Windows Forms Designer generated files
-*.g.cs
-*.g.i.cs
-*.Designer.cs
 
 # ClickOnce directory
 publish/
