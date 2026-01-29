@@ -59,10 +59,17 @@ namespace UIAutomation
         private NotifyIcon notifyIcon1;
         private ContextMenuStrip contextMenu;
         // Class level vars
+        // Drag-related variables
+        private bool isDragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
         // End Variables
         public Form1()
         {
             InitializeComponent();
+            this.MouseDown += Form1_MouseDown;
+            this.MouseMove += Form1_MouseMove;
+            this.MouseUp += Form1_MouseUp;
             this.Load += MainForm_Load;
             this.FormClosing += MainForm_FormClosing;
             // Init Actions array
@@ -118,6 +125,30 @@ namespace UIAutomation
         {
             notifyIcon1.Visible = false;
             notifyIcon1.Dispose();
+        }
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = true;
+                dragCursorPoint = Cursor.Position;
+                dragFormPoint = this.Location;
+            }
+        }
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
+        }
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDragging = false;
+            }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -2686,6 +2717,11 @@ namespace UIAutomation
             {
                 this.WindowState = FormWindowState.Maximized;
             }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 
