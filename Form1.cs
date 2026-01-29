@@ -79,6 +79,104 @@ namespace UIAutomation
             // Bypass SSL Certificate Authentication for .NET Framework 4.5.2
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
             httpClient = new HttpClient();
+            // Setup placeholders
+            SetupPlaceholders();
+        }
+
+        // Placeholder color
+        private readonly Color _placeholderColor = Color.FromArgb(149, 149, 149);
+        private readonly Dictionary<TextBox, string> _placeholders = new Dictionary<TextBox, string>();
+
+        private void SetupPlaceholders()
+        {
+            // Define placeholders for each textbox
+            AddPlaceholder(txtWindowXPath, "e.g., Calculator, Notepad, Chrome");
+            AddPlaceholder(txtElementXPath, "e.g., Button[@Name='1'], Edit[@Name='input']");
+            AddPlaceholder(textBoxNewValue, "e.g., Hello World");
+            AddPlaceholder(textBoxFieldValue, "Output will appear here...");
+            AddPlaceholder(textBoxPrefix, "e.g., http://localhost:8080/");
+            AddPlaceholder(textBoxTcpPrefix, "e.g., http://localhost:9000/");
+            AddPlaceholder(textBoxRMUrl, "e.g., http://example.com/api/debug");
+            AddPlaceholder(sshportTextBox, "e.g., 8080");
+        }
+
+        private void AddPlaceholder(TextBox textBox, string placeholderText)
+        {
+            _placeholders[textBox] = placeholderText;
+            textBox.Enter += TextBox_Enter;
+            textBox.Leave += TextBox_Leave;
+            // Set initial placeholder
+            ShowPlaceholder(textBox);
+        }
+
+        private void ShowPlaceholder(TextBox textBox)
+        {
+            if (string.IsNullOrEmpty(textBox.Text) && _placeholders.ContainsKey(textBox))
+            {
+                textBox.Text = _placeholders[textBox];
+                textBox.ForeColor = _placeholderColor;
+            }
+        }
+
+        private void HidePlaceholder(TextBox textBox)
+        {
+            if (_placeholders.ContainsKey(textBox) && textBox.Text == _placeholders[textBox])
+            {
+                textBox.Text = "";
+                textBox.ForeColor = Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            }
+        }
+
+        private void TextBox_Enter(object sender, EventArgs e)
+        {
+            var textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                HidePlaceholder(textBox);
+            }
+        }
+
+        private void TextBox_Leave(object sender, EventArgs e)
+        {
+            var textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    ShowPlaceholder(textBox);
+                }
+            }
+        }
+
+        // Helper method to get real text value (returns empty if still showing placeholder)
+        private string GetRealText(TextBox textBox)
+        {
+            if (_placeholders.ContainsKey(textBox) && textBox.Text == _placeholders[textBox])
+            {
+                return "";
+            }
+            return textBox.Text;
+        }
+
+        // Helper method to set text to a textbox (handles placeholder color)
+        private void SetTextBoxText(TextBox textBox, string text)
+        {
+            if (_placeholders.ContainsKey(textBox))
+            {
+                if (string.IsNullOrEmpty(text))
+                {
+                    ShowPlaceholder(textBox);
+                }
+                else
+                {
+                    textBox.Text = text;
+                    textBox.ForeColor = Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+                }
+            }
+            else
+            {
+                textBox.Text = text;
+            }
         }
         private void HandleException(string message)
         {
@@ -661,7 +759,7 @@ namespace UIAutomation
                 {
                     ValuePattern valuePattern = (ValuePattern)valuePatternObj;
                     string value = valuePattern.Current.Value;
-                    textBoxFieldValue.Text = value;
+                    SetTextBoxText(textBoxFieldValue, value);
                     data.Add(value);
                     return true;
                 }
@@ -670,7 +768,7 @@ namespace UIAutomation
                 {
                     TextPattern textPattern = (TextPattern)textPatternObj;
                     string value = textPattern.DocumentRange.GetText(-1);
-                    textBoxFieldValue.Text = value;
+                    SetTextBoxText(textBoxFieldValue, value);
                     data.Add(value);
                     return true;
                 }

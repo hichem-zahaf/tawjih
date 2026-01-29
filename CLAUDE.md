@@ -136,3 +136,6 @@ dotnet run --project UIAutomation.csproj
    - Use `/skills` to discover available commands
    - Configure AI providers in `.claude/config.json`
    - Use agents for complex tasks like PR review or issue resolution
+
+## THEME
+- #111f35 #8d244c #EAEFEF #EAEFEF

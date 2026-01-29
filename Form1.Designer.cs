@@ -67,19 +67,23 @@
             // 
             // textBoxTcpPrefix
             // 
+            this.textBoxTcpPrefix.BackColor = System.Drawing.Color.White;
             this.textBoxTcpPrefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTcpPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxTcpPrefix.Location = new System.Drawing.Point(15, 263);
+            this.textBoxTcpPrefix.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxTcpPrefix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.textBoxTcpPrefix.Location = new System.Drawing.Point(15, 270);
             this.textBoxTcpPrefix.Name = "textBoxTcpPrefix";
-            this.textBoxTcpPrefix.Size = new System.Drawing.Size(575, 23);
+            this.textBoxTcpPrefix.Size = new System.Drawing.Size(575, 25);
             this.textBoxTcpPrefix.TabIndex = 10;
             // 
             // checkBoxDebug
             // 
             this.checkBoxDebug.AutoSize = true;
-            this.checkBoxDebug.Location = new System.Drawing.Point(15, 292);
+            this.checkBoxDebug.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.checkBoxDebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.checkBoxDebug.Location = new System.Drawing.Point(15, 295);
             this.checkBoxDebug.Name = "checkBoxDebug";
-            this.checkBoxDebug.Size = new System.Drawing.Size(88, 17);
+            this.checkBoxDebug.Size = new System.Drawing.Size(95, 19);
             this.checkBoxDebug.TabIndex = 31;
             this.checkBoxDebug.Text = "Debug Mode";
             this.checkBoxDebug.UseVisualStyleBackColor = true;
@@ -88,256 +92,368 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 312);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.label6.Location = new System.Drawing.Point(15, 320);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.Size = new System.Drawing.Size(66, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "Debug URL";
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(699, 325);
+            this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button14.Location = new System.Drawing.Point(699, 333);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(85, 23);
+            this.button14.Size = new System.Drawing.Size(85, 28);
             this.button14.TabIndex = 30;
             this.button14.Text = "Register URL";
-            this.button14.UseVisualStyleBackColor = true;
+            this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // textBoxPrefix
             // 
+            this.textBoxPrefix.BackColor = System.Drawing.Color.White;
             this.textBoxPrefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxPrefix.Location = new System.Drawing.Point(15, 234);
+            this.textBoxPrefix.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxPrefix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.textBoxPrefix.Location = new System.Drawing.Point(15, 237);
             this.textBoxPrefix.Name = "textBoxPrefix";
-            this.textBoxPrefix.Size = new System.Drawing.Size(575, 23);
+            this.textBoxPrefix.Size = new System.Drawing.Size(575, 25);
             this.textBoxPrefix.TabIndex = 19;
             // 
             // textBoxRMUrl
             // 
+            this.textBoxRMUrl.BackColor = System.Drawing.Color.White;
             this.textBoxRMUrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRMUrl.Location = new System.Drawing.Point(15, 328);
+            this.textBoxRMUrl.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxRMUrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.textBoxRMUrl.Location = new System.Drawing.Point(15, 338);
             this.textBoxRMUrl.Name = "textBoxRMUrl";
-            this.textBoxRMUrl.Size = new System.Drawing.Size(681, 20);
+            this.textBoxRMUrl.Size = new System.Drawing.Size(681, 23);
             this.textBoxRMUrl.TabIndex = 29;
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(596, 233);
+            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button11.Location = new System.Drawing.Point(596, 237);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 23);
+            this.button11.Size = new System.Drawing.Size(100, 28);
             this.button11.TabIndex = 20;
-            this.button11.Text = "Start Listner";
-            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Text = "Start Listener";
+            this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // sshportTextBox
             // 
+            this.sshportTextBox.BackColor = System.Drawing.Color.White;
             this.sshportTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sshportTextBox.Location = new System.Drawing.Point(596, 299);
+            this.sshportTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.sshportTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.sshportTextBox.Location = new System.Drawing.Point(596, 300);
             this.sshportTextBox.Name = "sshportTextBox";
-            this.sshportTextBox.Size = new System.Drawing.Size(100, 20);
+            this.sshportTextBox.Size = new System.Drawing.Size(100, 23);
             this.sshportTextBox.TabIndex = 28;
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(596, 262);
+            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button12.Location = new System.Drawing.Point(596, 267);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(100, 23);
+            this.button12.Size = new System.Drawing.Size(100, 28);
             this.button12.TabIndex = 21;
-            this.button12.Text = "Start tcp listner";
-            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Text = "Start TCP Listener";
+            this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // startsshbtn
             // 
-            this.startsshbtn.Location = new System.Drawing.Point(699, 299);
+            this.startsshbtn.BackColor = System.Drawing.Color.White;
+            this.startsshbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.startsshbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.startsshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startsshbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.startsshbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.startsshbtn.Location = new System.Drawing.Point(699, 300);
             this.startsshbtn.Name = "startsshbtn";
-            this.startsshbtn.Size = new System.Drawing.Size(85, 23);
+            this.startsshbtn.Size = new System.Drawing.Size(85, 28);
             this.startsshbtn.TabIndex = 27;
-            this.startsshbtn.Text = "Start SSH ";
-            this.startsshbtn.UseVisualStyleBackColor = true;
+            this.startsshbtn.Text = "Start SSH";
+            this.startsshbtn.UseVisualStyleBackColor = false;
             this.startsshbtn.Click += new System.EventHandler(this.startsshbtn_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(702, 233);
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button5.Location = new System.Drawing.Point(702, 237);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 23);
+            this.button5.Size = new System.Drawing.Size(82, 28);
             this.button5.TabIndex = 23;
-            this.button5.Text = "Stop listner";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Text = "Stop Listener";
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(699, 262);
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button8.Location = new System.Drawing.Point(699, 267);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(85, 23);
+            this.button8.Size = new System.Drawing.Size(85, 28);
             this.button8.TabIndex = 24;
             this.button8.Text = "Stop TCP";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
+            //
             // button13
-            // 
+            //
+            this.button13.BackColor = System.Drawing.Color.White;
+            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button13.FlatAppearance.BorderSize = 1;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button13.Location = new System.Drawing.Point(198, 127);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(91, 33);
+            this.button13.Size = new System.Drawing.Size(91, 36);
             this.button13.TabIndex = 26;
             this.button13.Text = "Close Window";
-            this.button13.UseVisualStyleBackColor = true;
+            this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
+            //
             // button7
-            // 
+            //
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button7.FlatAppearance.BorderSize = 1;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button7.Location = new System.Drawing.Point(96, 127);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(96, 33);
+            this.button7.Size = new System.Drawing.Size(96, 36);
             this.button7.TabIndex = 16;
             this.button7.Text = "Move Mouse";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
+            //
             // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button10.Location = new System.Drawing.Point(15, 195);
+            //
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(36)))), ((int)(((byte)(76)))));
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(30)))), ((int)(((byte)(65)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular);
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(15, 198);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(108, 33);
+            this.button10.Size = new System.Drawing.Size(108, 36);
             this.button10.TabIndex = 14;
             this.button10.Text = "Start Actions";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
+            //
             // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            //
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button6.FlatAppearance.BorderSize = 1;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button6.Location = new System.Drawing.Point(516, 127);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 33);
+            this.button6.Size = new System.Drawing.Size(95, 36);
             this.button6.TabIndex = 9;
             this.button6.Text = "Set Text";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(760, 141);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.label3.Location = new System.Drawing.Point(760, 143);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 17);
+            this.label3.Size = new System.Drawing.Size(15, 19);
             this.label3.TabIndex = 7;
             this.label3.Text = "s";
-            // 
+            //
             // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            //
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button4.FlatAppearance.BorderSize = 1;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button4.Location = new System.Drawing.Point(617, 127);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 33);
+            this.button4.Size = new System.Drawing.Size(108, 36);
             this.button4.TabIndex = 6;
             this.button4.Text = "Wait";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
+            //
             // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            //
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button3.FlatAppearance.BorderSize = 1;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button3.Location = new System.Drawing.Point(295, 127);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 33);
+            this.button3.Size = new System.Drawing.Size(108, 36);
             this.button3.TabIndex = 5;
             this.button3.Text = "Get value";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
+            //
             // textBoxFieldValue
-            // 
+            //
+            this.textBoxFieldValue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
             this.textBoxFieldValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxFieldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxFieldValue.Location = new System.Drawing.Point(457, 166);
+            this.textBoxFieldValue.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxFieldValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.textBoxFieldValue.Location = new System.Drawing.Point(457, 168);
             this.textBoxFieldValue.Name = "textBoxFieldValue";
             this.textBoxFieldValue.ReadOnly = true;
-            this.textBoxFieldValue.Size = new System.Drawing.Size(322, 23);
+            this.textBoxFieldValue.Size = new System.Drawing.Size(322, 26);
             this.textBoxFieldValue.TabIndex = 4;
-            // 
+            //
             // textBoxTimeout
-            // 
+            //
+            this.textBoxTimeout.BackColor = System.Drawing.Color.White;
             this.textBoxTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxTimeout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxTimeout.Location = new System.Drawing.Point(731, 135);
+            this.textBoxTimeout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxTimeout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.textBoxTimeout.Location = new System.Drawing.Point(731, 137);
             this.textBoxTimeout.Name = "textBoxTimeout";
-            this.textBoxTimeout.Size = new System.Drawing.Size(27, 23);
+            this.textBoxTimeout.Size = new System.Drawing.Size(27, 26);
             this.textBoxTimeout.TabIndex = 4;
             this.textBoxTimeout.Text = "3";
             this.textBoxTimeout.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
+            //
             // textBoxNewValue
-            // 
+            //
+            this.textBoxNewValue.BackColor = System.Drawing.Color.White;
             this.textBoxNewValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxNewValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxNewValue.Location = new System.Drawing.Point(15, 166);
+            this.textBoxNewValue.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxNewValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.textBoxNewValue.Location = new System.Drawing.Point(15, 168);
             this.textBoxNewValue.Name = "textBoxNewValue";
-            this.textBoxNewValue.Size = new System.Drawing.Size(436, 23);
+            this.textBoxNewValue.Size = new System.Drawing.Size(436, 26);
             this.textBoxNewValue.TabIndex = 4;
-            // 
+            //
             // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            //
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button2.FlatAppearance.BorderSize = 1;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button2.Location = new System.Drawing.Point(409, 127);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 33);
+            this.button2.Size = new System.Drawing.Size(97, 36);
             this.button2.TabIndex = 3;
             this.button2.Text = "Set Value";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
+            //
             // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            //
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.button1.FlatAppearance.BorderSize = 1;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
             this.button1.Location = new System.Drawing.Point(15, 127);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
+            this.button1.Size = new System.Drawing.Size(75, 36);
             this.button1.TabIndex = 2;
             this.button1.Text = "Click";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // txtElementXPath
-            // 
+            //
+            this.txtElementXPath.BackColor = System.Drawing.Color.White;
             this.txtElementXPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtElementXPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtElementXPath.Location = new System.Drawing.Point(15, 98);
+            this.txtElementXPath.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtElementXPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.txtElementXPath.Location = new System.Drawing.Point(15, 100);
             this.txtElementXPath.Name = "txtElementXPath";
-            this.txtElementXPath.Size = new System.Drawing.Size(764, 23);
+            this.txtElementXPath.Size = new System.Drawing.Size(764, 26);
             this.txtElementXPath.TabIndex = 1;
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 82);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.label2.Location = new System.Drawing.Point(12, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(76, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Element Xpath";
-            // 
+            //
             // txtWindowXPath
-            // 
+            //
+            this.txtWindowXPath.BackColor = System.Drawing.Color.White;
             this.txtWindowXPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtWindowXPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtWindowXPath.Location = new System.Drawing.Point(15, 54);
+            this.txtWindowXPath.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtWindowXPath.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.txtWindowXPath.Location = new System.Drawing.Point(15, 56);
             this.txtWindowXPath.Name = "txtWindowXPath";
-            this.txtWindowXPath.Size = new System.Drawing.Size(764, 23);
+            this.txtWindowXPath.Size = new System.Drawing.Size(764, 26);
             this.txtWindowXPath.TabIndex = 1;
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            this.label1.Location = new System.Drawing.Point(12, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Windows Xpath";
             // 
