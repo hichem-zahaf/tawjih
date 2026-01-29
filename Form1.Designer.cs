@@ -37,10 +37,8 @@
             this.sshportTextBox = new System.Windows.Forms.TextBox();
             this.startsshbtn = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBoxRM = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.textBoxPrefix = new System.Windows.Forms.TextBox();
@@ -67,28 +65,18 @@
             this.minApp = new System.Windows.Forms.Button();
             this.dockApp = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBoxDebug);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.textBoxRMUrl);
-            this.panel1.Controls.Add(this.sshportTextBox);
-            this.panel1.Controls.Add(this.startsshbtn);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.textBoxRM);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.textBoxPrefix);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.textBoxTcpPrefix);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button4);
@@ -101,17 +89,16 @@
             this.panel1.Controls.Add(this.txtElementXPath);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtWindowXPath);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 86);
+            this.panel1.Location = new System.Drawing.Point(12, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 451);
+            this.panel1.Size = new System.Drawing.Size(809, 482);
             this.panel1.TabIndex = 9;
             // 
             // checkBoxDebug
             // 
             this.checkBoxDebug.AutoSize = true;
-            this.checkBoxDebug.Location = new System.Drawing.Point(9, 365);
+            this.checkBoxDebug.Location = new System.Drawing.Point(9, 66);
             this.checkBoxDebug.Name = "checkBoxDebug";
             this.checkBoxDebug.Size = new System.Drawing.Size(88, 17);
             this.checkBoxDebug.TabIndex = 31;
@@ -121,9 +108,9 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(514, 398);
+            this.button14.Location = new System.Drawing.Point(693, 99);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(80, 23);
+            this.button14.Size = new System.Drawing.Size(85, 23);
             this.button14.TabIndex = 30;
             this.button14.Text = "Register URL";
             this.button14.UseVisualStyleBackColor = true;
@@ -132,26 +119,26 @@
             // textBoxRMUrl
             // 
             this.textBoxRMUrl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRMUrl.Location = new System.Drawing.Point(6, 401);
+            this.textBoxRMUrl.Location = new System.Drawing.Point(9, 102);
             this.textBoxRMUrl.Name = "textBoxRMUrl";
-            this.textBoxRMUrl.Size = new System.Drawing.Size(502, 20);
+            this.textBoxRMUrl.Size = new System.Drawing.Size(681, 20);
             this.textBoxRMUrl.TabIndex = 29;
             this.textBoxRMUrl.Text = "Robomotion Debug Endpoint ";
             // 
             // sshportTextBox
             // 
             this.sshportTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sshportTextBox.Location = new System.Drawing.Point(6, 339);
+            this.sshportTextBox.Location = new System.Drawing.Point(590, 73);
             this.sshportTextBox.Name = "sshportTextBox";
-            this.sshportTextBox.Size = new System.Drawing.Size(79, 20);
+            this.sshportTextBox.Size = new System.Drawing.Size(100, 20);
             this.sshportTextBox.TabIndex = 28;
             this.sshportTextBox.Text = "3000";
             // 
             // startsshbtn
             // 
-            this.startsshbtn.Location = new System.Drawing.Point(91, 336);
+            this.startsshbtn.Location = new System.Drawing.Point(693, 73);
             this.startsshbtn.Name = "startsshbtn";
-            this.startsshbtn.Size = new System.Drawing.Size(97, 23);
+            this.startsshbtn.Size = new System.Drawing.Size(85, 23);
             this.startsshbtn.TabIndex = 27;
             this.startsshbtn.Text = "Start SSH ";
             this.startsshbtn.UseVisualStyleBackColor = true;
@@ -159,7 +146,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(222, 213);
+            this.button13.Location = new System.Drawing.Point(189, 102);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(91, 33);
             this.button13.TabIndex = 26;
@@ -167,19 +154,9 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(514, 310);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(80, 23);
-            this.button9.TabIndex = 25;
-            this.button9.Text = "Test TCP";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click_1);
-            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(514, 284);
+            this.button8.Location = new System.Drawing.Point(694, 37);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(80, 23);
             this.button8.TabIndex = 24;
@@ -189,7 +166,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(514, 256);
+            this.button5.Location = new System.Drawing.Point(694, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(81, 23);
             this.button5.TabIndex = 23;
@@ -197,20 +174,11 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
-            // textBoxRM
-            // 
-            this.textBoxRM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxRM.Location = new System.Drawing.Point(6, 313);
-            this.textBoxRM.Name = "textBoxRM";
-            this.textBoxRM.ReadOnly = true;
-            this.textBoxRM.Size = new System.Drawing.Size(502, 20);
-            this.textBoxRM.TabIndex = 22;
-            // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(423, 285);
+            this.button12.Location = new System.Drawing.Point(590, 36);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(85, 23);
+            this.button12.Size = new System.Drawing.Size(100, 23);
             this.button12.TabIndex = 21;
             this.button12.Text = "Start tcp listner";
             this.button12.UseVisualStyleBackColor = true;
@@ -218,9 +186,9 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(423, 256);
+            this.button11.Location = new System.Drawing.Point(590, 7);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(85, 23);
+            this.button11.Size = new System.Drawing.Size(100, 23);
             this.button11.TabIndex = 20;
             this.button11.Text = "Start Listner";
             this.button11.UseVisualStyleBackColor = true;
@@ -229,15 +197,16 @@
             // textBoxPrefix
             // 
             this.textBoxPrefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPrefix.Location = new System.Drawing.Point(6, 259);
+            this.textBoxPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxPrefix.Location = new System.Drawing.Point(9, 8);
             this.textBoxPrefix.Name = "textBoxPrefix";
-            this.textBoxPrefix.Size = new System.Drawing.Size(411, 20);
+            this.textBoxPrefix.Size = new System.Drawing.Size(575, 23);
             this.textBoxPrefix.TabIndex = 19;
             this.textBoxPrefix.Text = "http://172.18.1.81:3000/rpa/";
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(120, 213);
+            this.button7.Location = new System.Drawing.Point(87, 102);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(96, 33);
             this.button7.TabIndex = 16;
@@ -248,7 +217,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button10.Location = new System.Drawing.Point(6, 213);
+            this.button10.Location = new System.Drawing.Point(6, 170);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(108, 33);
             this.button10.TabIndex = 14;
@@ -260,18 +229,18 @@
             // 
             this.textBoxTcpPrefix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTcpPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxTcpPrefix.Location = new System.Drawing.Point(6, 285);
+            this.textBoxTcpPrefix.Location = new System.Drawing.Point(9, 37);
             this.textBoxTcpPrefix.Name = "textBoxTcpPrefix";
-            this.textBoxTcpPrefix.Size = new System.Drawing.Size(411, 23);
+            this.textBoxTcpPrefix.Size = new System.Drawing.Size(575, 23);
             this.textBoxTcpPrefix.TabIndex = 10;
             this.textBoxTcpPrefix.Text = "172.18.1.81:3000";
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button6.Location = new System.Drawing.Point(500, 103);
+            this.button6.Location = new System.Drawing.Point(507, 102);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 30);
+            this.button6.Size = new System.Drawing.Size(95, 33);
             this.button6.TabIndex = 9;
             this.button6.Text = "Set Text";
             this.button6.UseVisualStyleBackColor = true;
@@ -281,18 +250,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(153, 188);
+            this.label3.Location = new System.Drawing.Point(751, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(15, 17);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Seconds";
+            this.label3.Text = "s";
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(6, 178);
+            this.button4.Location = new System.Drawing.Point(608, 102);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 29);
+            this.button4.Size = new System.Drawing.Size(108, 33);
             this.button4.TabIndex = 6;
             this.button4.Text = "Wait";
             this.button4.UseVisualStyleBackColor = true;
@@ -301,7 +270,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(6, 141);
+            this.button3.Location = new System.Drawing.Point(286, 102);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 33);
             this.button3.TabIndex = 5;
@@ -313,17 +282,17 @@
             // 
             this.textBoxFieldValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFieldValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxFieldValue.Location = new System.Drawing.Point(120, 147);
+            this.textBoxFieldValue.Location = new System.Drawing.Point(448, 141);
             this.textBoxFieldValue.Name = "textBoxFieldValue";
             this.textBoxFieldValue.ReadOnly = true;
-            this.textBoxFieldValue.Size = new System.Drawing.Size(474, 23);
+            this.textBoxFieldValue.Size = new System.Drawing.Size(322, 23);
             this.textBoxFieldValue.TabIndex = 4;
             // 
             // textBoxTimeout
             // 
             this.textBoxTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTimeout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxTimeout.Location = new System.Drawing.Point(120, 182);
+            this.textBoxTimeout.Location = new System.Drawing.Point(722, 110);
             this.textBoxTimeout.Name = "textBoxTimeout";
             this.textBoxTimeout.Size = new System.Drawing.Size(27, 23);
             this.textBoxTimeout.TabIndex = 4;
@@ -334,15 +303,15 @@
             // 
             this.textBoxNewValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNewValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBoxNewValue.Location = new System.Drawing.Point(187, 108);
+            this.textBoxNewValue.Location = new System.Drawing.Point(6, 141);
             this.textBoxNewValue.Name = "textBoxNewValue";
-            this.textBoxNewValue.Size = new System.Drawing.Size(210, 23);
+            this.textBoxNewValue.Size = new System.Drawing.Size(436, 23);
             this.textBoxNewValue.TabIndex = 4;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(84, 102);
+            this.button2.Location = new System.Drawing.Point(400, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 33);
             this.button2.TabIndex = 3;
@@ -367,7 +336,7 @@
             this.txtElementXPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtElementXPath.Location = new System.Drawing.Point(6, 73);
             this.txtElementXPath.Name = "txtElementXPath";
-            this.txtElementXPath.Size = new System.Drawing.Size(589, 23);
+            this.txtElementXPath.Size = new System.Drawing.Size(764, 23);
             this.txtElementXPath.TabIndex = 1;
             this.txtElementXPath.Text = "//Table[@Name=\'DataGridView\']";
             // 
@@ -386,14 +355,14 @@
             this.txtWindowXPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtWindowXPath.Location = new System.Drawing.Point(6, 29);
             this.txtWindowXPath.Name = "txtWindowXPath";
-            this.txtWindowXPath.Size = new System.Drawing.Size(589, 23);
+            this.txtWindowXPath.Size = new System.Drawing.Size(764, 23);
             this.txtWindowXPath.TabIndex = 1;
             this.txtWindowXPath.Text = "//Window[@Name=\'SelfishNet v0.1 Beta\']";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 385);
+            this.label6.Location = new System.Drawing.Point(9, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 0;
@@ -418,7 +387,7 @@
             // 
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(786, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(836, 24);
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -428,7 +397,7 @@
             this.closeApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closeApp.BackgroundImage")));
             this.closeApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.closeApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.closeApp.Location = new System.Drawing.Point(394, 5);
+            this.closeApp.Location = new System.Drawing.Point(65, 5);
             this.closeApp.Name = "closeApp";
             this.closeApp.Size = new System.Drawing.Size(25, 25);
             this.closeApp.TabIndex = 4;
@@ -441,7 +410,7 @@
             this.minApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minApp.BackgroundImage")));
             this.minApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.minApp.ForeColor = System.Drawing.Color.Transparent;
-            this.minApp.Location = new System.Drawing.Point(363, 6);
+            this.minApp.Location = new System.Drawing.Point(34, 6);
             this.minApp.Name = "minApp";
             this.minApp.Size = new System.Drawing.Size(25, 25);
             this.minApp.TabIndex = 5;
@@ -454,7 +423,7 @@
             this.dockApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dockApp.BackgroundImage")));
             this.dockApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.dockApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.dockApp.Location = new System.Drawing.Point(332, 6);
+            this.dockApp.Location = new System.Drawing.Point(3, 6);
             this.dockApp.Name = "dockApp";
             this.dockApp.Size = new System.Drawing.Size(25, 25);
             this.dockApp.TabIndex = 6;
@@ -467,10 +436,29 @@
             this.panel2.Controls.Add(this.minApp);
             this.panel2.Controls.Add(this.closeApp);
             this.panel2.Controls.Add(this.dockApp);
-            this.panel2.Location = new System.Drawing.Point(357, 0);
+            this.panel2.Location = new System.Drawing.Point(732, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(429, 35);
+            this.panel2.Size = new System.Drawing.Size(104, 35);
             this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.textBoxTcpPrefix);
+            this.panel3.Controls.Add(this.checkBoxDebug);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.button14);
+            this.panel3.Controls.Add(this.textBoxPrefix);
+            this.panel3.Controls.Add(this.textBoxRMUrl);
+            this.panel3.Controls.Add(this.button11);
+            this.panel3.Controls.Add(this.sshportTextBox);
+            this.panel3.Controls.Add(this.button12);
+            this.panel3.Controls.Add(this.startsshbtn);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button8);
+            this.panel3.Location = new System.Drawing.Point(6, 209);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(785, 134);
+            this.panel3.TabIndex = 32;
             // 
             // Form1
             // 
@@ -478,18 +466,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(786, 565);
+            this.ClientSize = new System.Drawing.Size(836, 533);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Oakland RPA v2.0.3 [PHME]";
+            this.Text = "Tawjih";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,10 +507,8 @@
         private System.Windows.Forms.TextBox textBoxPrefix;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TextBox textBoxRM;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TextBox sshportTextBox;
         private System.Windows.Forms.Button startsshbtn;
@@ -533,6 +521,7 @@
         private System.Windows.Forms.Button minApp;
         private System.Windows.Forms.Button dockApp;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

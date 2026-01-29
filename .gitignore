@@ -110,3 +110,4 @@ out/
 .qwen/
 QWEN.md
 *.qwen
+.claude

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Oakland UIA [PHME]")]
-[assembly: AssemblyDescription("This in a custon made RPA Tool to automate windows applications")]
+[assembly: AssemblyTitle("Tawjih")]
+[assembly: AssemblyDescription("This in an open source automation application that uses windows api to automate windows application specially in old systems")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Oakland")]
-[assembly: AssemblyProduct("UIA")]
-[assembly: AssemblyCopyright("Copyright Oakland ©  2024")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Tawjih")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
